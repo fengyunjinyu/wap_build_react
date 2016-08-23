@@ -17,6 +17,10 @@ webpackJsonp([0,1],[
 	var ReactDom = __webpack_require__(98);
 	var Hello = __webpack_require__(236);
 
+	var Home = __webpack_require__(237);
+	var Footmenu = __webpack_require__(238);
+
+	var data = [{ name: "消息", classname: 'ftmenu_ico ftmenu_ico_user' }, { name: '朋友', classname: 'ftmenu_ico ftmenu_ico_friend' }, { name: '附近', classname: 'ftmenu_ico ftmenu_ico_find' }, { name: '我', classname: 'ftmenu_ico ftmenu_ico_me' }];
 
 	var CommentBox = React.createClass({
 	    displayName: 'CommentBox',
@@ -29,10 +33,18 @@ webpackJsonp([0,1],[
 	        );
 	    }
 	});
+
+	var FootMenuMain = React.createClass({
+	    displayName: 'FootMenuMain',
+
+	    render: function render() {
+	        return React.createElement(Footmenu, { data: data });
+	    }
+	});
 	ReactDom.render(React.createElement(
 	    _reactRouter.Router,
 	    { history: _reactRouter.hashHistory },
-	    React.createElement(_reactRouter.Route, { path: '/', component: CommentBox })
+	    React.createElement(_reactRouter.Route, { path: '/', component: FootMenuMain })
 	), document.getElementById("app"));
 
 /***/ },
@@ -27058,6 +27070,121 @@ webpackJsonp([0,1],[
 	});
 
 	module.exports = Hello;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Home = function (_Component) {
+	    _inherits(Home, _Component);
+
+	    function Home(props) {
+	        _classCallCheck(this, Home);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Home).call(this, props));
+	    }
+
+	    _createClass(Home, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement(
+	                        'div',
+	                        null,
+	                        'Hello world'
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Home;
+	}(_react.Component);
+
+	module.exports = Home;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Footmenu = function (_Component) {
+	    _inherits(Footmenu, _Component);
+
+	    function Footmenu(props) {
+	        _classCallCheck(this, Footmenu);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Footmenu).call(this, props));
+	    }
+
+	    _createClass(Footmenu, [{
+	        key: 'render',
+	        value: function render() {
+	            var listnodes = this.props.data.map(function (listitem) {
+	                return _react2.default.createElement(
+	                    'li',
+	                    { key: listitem.name },
+	                    _react2.default.createElement('div', { className: listitem.classname }),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        listitem['name'],
+	                        ' '
+	                    )
+	                );
+	            });
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'ft_main_menu' },
+	                _react2.default.createElement(
+	                    'ul',
+	                    null,
+	                    listnodes
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Footmenu;
+	}(_react.Component);
+
+	module.exports = Footmenu;
 
 /***/ }
 ]);

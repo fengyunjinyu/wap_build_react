@@ -1,0 +1,11 @@
+@charset "utf-8";
+*{margin: 0;padding: 0;box-sizing: border-box}
+ul,li{list-style-type: none}
+
+.ft_main_menu{height: 70px;background: #f5f6f5;border-top: #d3d3d3 solid 1px;width: 100%;
+    position: fixed;bottom: 0;left: 0;}
+.ft_main_menu ul{ display: flex}
+.ft_main_menu ul li{flex: 1;text-align: center;padding-top: 10px;}
+.ft_main_menu ul li p{font-size: 12px;text-align: center;line-height: 20px;}
+
+.ftmenu_ico{ display: block;height: 40px;width:40px;margin: 0 auto;background: #777777}
