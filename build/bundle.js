@@ -42,19 +42,54 @@ webpackJsonp([0,1],[
 	    }
 	});
 
-	ReactDom.render(React.createElement(
-	    _reactRouter.Router,
-	    { history: _reactRouter.hashHistory },
-	    React.createElement(
-	        _reactRouter.Route,
-	        { path: '/', component: App },
-	        React.createElement(_reactRouter.IndexRoute, { component: Hello }),
-	        React.createElement(_reactRouter.Route, { path: 'friends', component: Friends }),
-	        React.createElement(_reactRouter.Route, { path: 'me', component: Me }),
-	        React.createElement(_reactRouter.Route, { path: 'near', component: Near }),
-	        React.createElement(_reactRouter.Route, { path: 'message', component: Message })
-	    )
-	), document.getElementById("app"));
+	/*
+
+	const CourseRoute = {
+	    path:'course:/courseId',
+	    getChildRoutes(location , callback){
+	        require.ensure([] , function(  require ){
+	            callback(null , [
+	                require('./routes/Announcements'),
+	                require('./routes/Assignments'),
+	                require('./routes/Grades'),
+	            ])
+
+	        })
+
+	    },
+	    getIndexRoute(location , callbacl){
+	        require.ensure([] , function( require ){
+	            callback(null , require('./components/Index'))
+	        })
+	    },
+	    getComponents(location , callback){
+	        require.ensure([] , function(require){
+	            callback(null , require("./components/Course"))
+
+	        })
+	    }
+	}
+
+	*/
+
+	var routes = {
+	    path: '/',
+	    component: App,
+	    childRoutes: [{ path: 'friends', component: Friends }, { path: 'me', component: Me }, { path: 'near', component: Near }, { path: 'message', component: Message }],
+	    indexRoute: {
+	        component: Hello
+	    }
+	};
+	var rootroutes = {
+	    path: '/',
+	    component: App,
+	    childRoutes: [__webpack_require__(242), __webpack_require__(243), { path: 'friends', component: Friends }, { path: 'message', component: Message }],
+	    indexRoute: {
+	        component: Hello
+	    }
+	};
+
+	ReactDom.render(React.createElement(_reactRouter.Router, { history: _reactRouter.hashHistory, routes: rootroutes }), document.getElementById("app"));
 
 /***/ },
 /* 2 */
@@ -27208,9 +27243,14 @@ webpackJsonp([0,1],[
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'h1',
-	                { className: 'app_title' },
-	                '朋友'
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h1',
+	                    { className: 'app_title' },
+	                    '朋友'
+	                ),
+	                this.props.children
 	            );
 	        }
 	    }]);
@@ -27318,21 +27358,62 @@ webpackJsonp([0,1],[
 /* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(4);
 	var Hello = React.createClass({
-	    displayName: 'Hello',
+	    displayName: "Hello",
 	    render: function render() {
 	        return React.createElement(
-	            'h1',
-	            null,
-	            ' 默认模块 '
+	            "h1",
+	            { className: "app_title" },
+	            " 默认模块 "
 	        );
 	    }
 	});
 
 	module.exports = Hello;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+	    path: 'me',
+	    //component:require("../Me.react")
+
+	    getComponent: function getComponent(nextState, cb) {
+	        !/* require.ensure */(function (require) {
+	            cb(null, __webpack_require__(240));
+	        }(__webpack_require__));
+	    }
+	    /*
+	    getChildRoutes(partialNextState , cb){
+	        require.ensure([] , (require)=> {
+	            cb(null , [
+	                require('./routes/Announcements'),
+	                require('./routes/Assignments'),
+	                require('./routes/Grades')
+	            ])
+	        })
+	    }
+	    */
+
+	};
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var Nearcomp = __webpack_require__(239);
+	module.exports = {
+	    path: 'near',
+	    component: Nearcomp
+	};
 
 /***/ }
 ]);

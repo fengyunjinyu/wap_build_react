@@ -1,3 +1,5 @@
-/**
- * Created by Administrator on 2016/8/24.
- */
+var Nearcomp = require("../Near.react");
+module.exports={
+    path:'near',
+    component:Nearcomp
+}

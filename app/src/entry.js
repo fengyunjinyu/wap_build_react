@@ -28,6 +28,8 @@ var App = React.createClass({
     }
 });
 
+/*
+
 const CourseRoute = {
     path:'course:/courseId',
     getChildRoutes(location , callback){
@@ -54,15 +56,37 @@ const CourseRoute = {
     }
 }
 
+*/
+
+
+const routes = {
+    path: '/',
+    component: App,
+    childRoutes: [
+        {path : 'friends' ,component : Friends},
+        {path : 'me' , component : Me},
+        {path : 'near' , component : Near},
+        {path : 'message' , component: Message }
+    ],
+    indexRoute:{
+        component:Hello
+    }
+};
+const rootroutes = {
+    path:'/',
+    component:App,
+    childRoutes:[
+        require("./routes/me.route"),
+        require('./routes/near.route'),
+        {path : 'friends' ,component : Friends},
+        {path : 'message' , component: Message }
+    ],
+    indexRoute:{
+        component:Hello
+    }
+};
 ReactDom.render(
-    <Router history={hashHistory}>
-        <Route path="/" component={App}>
-            <IndexRoute component={Hello} />
-            <Route path="friends" component={Friends} />
-            <Route path="me" component={Me} />
-            <Route path="near" component={Near} />
-            <Route path="message" component={Message} />
-        </Route>
+    <Router history={hashHistory} routes={rootroutes}>
     </Router>
     ,
     document.getElementById("app")
