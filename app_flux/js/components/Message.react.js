@@ -15,6 +15,8 @@ var MessageStore = require('../stores/MessageStore');
  */
 var MessageAction = require('../actions/MessageActionCreator');
 
+var MessageList = require("./Messagelist.react");
+
 
 var ENTER_KEY_CODE = 13;
 var Message  = React.createClass({
@@ -26,6 +28,7 @@ var Message  = React.createClass({
 
     render:function(){
         return (
+
             <div className="mess_pos">
                 <input type="text" className="message_input" value={this.state.text} onChange={this._onChange} onKeyDown={this._onKeyDown} />
             </div>

@@ -12,7 +12,9 @@ var MessageList = React.createClass({
     },
     render:function(){
         return (
-            <ul></ul>
+            <div className="overline flo">
+               <ul className="list messagelist"></ul>
+            </div>
         );
     },
 
@@ -32,7 +34,15 @@ var MessageList = React.createClass({
 var MessageItem = React.createClass({
     render: function(){
         return (
-            <li></li>
+            <li>
+                <div className="user_ico user_ico_left"></div>
+                <p className="user_text">
+                    <b className="text_ico text_ico_left"></b>
+                    Helloworld SMP  UserBass单独
+                </p>
+            </li>
         );
     }
-})
+});
+
+module.exports=MessageList;
