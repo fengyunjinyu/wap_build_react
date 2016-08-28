@@ -19,3 +19,52 @@ h1,h2,h3,h4,h5,h6{font-style: normal;font-weight: normal}
     color: #f5f6f5;
     text-align: center
 }
+
+.clearfid{
+    clear: both;
+    content: '';
+}
+.clearfid:after{
+    clear: both;
+    content: '';
+    position: relative;
+    display: block;
+}
+
+body{background: #f5f6f5;}
+
+.overline{ width:100%;}
+
+
+.flo{ position: relative ;float: left}
+.flo_r{position: relative; float: right}
+.default_list{width:100% ; margin-top: 14px; background: #fff;}
+.default_list .list{width:100%;position: relative;float: left}
+.default_list li{line-height: 30px;position: relative;padding-left: 50px;float: left;width: 100%}
+.default_list li:last-child{border-bottom: none}
+.default_list li b.img_ico{width:30px;position:absolute;height: 30px;left:10px;top:10px;background: #f5f6f5;display: block}
+.default_list li p.desc{border-bottom: #d3d3d3 solid 1px;line-height: 30px;padding: 10px 15px 10px 0;width: 100%}
+
+.list{ list-style-type: none}
+.list li{position: relative;float: left}
+.shoplist{
+    width: 100%;
+    background: #fff;
+}
+.shoplist li{
+    width: 100%;
+    float: left;
+    padding: 10px;
+    padding-left: 70px;
+    border-bottom: #f5f6f5 solid 1px;
+}
+.shoplist li img{
+    width: 50px;height: 50px;
+    background: #848484;position: absolute;left:10px
+}
+.shoplist li .shopinfo{
+    width: 100%;
+    float: right;
+}
+.shoplist li .shopinfo h3{ line-height: 30px;font-size: 16px;}
+.shoplist li .shopinfo p { line-height: 20px;font-size: 12px; }

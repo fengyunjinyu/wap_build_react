@@ -88,7 +88,6 @@ webpackJsonp([0,1],[
 	        component: Hello
 	    }
 	};
-
 	ReactDom.render(React.createElement(_reactRouter.Router, { history: _reactRouter.hashHistory, routes: rootroutes }), document.getElementById("app"));
 
 /***/ },
@@ -27244,7 +27243,7 @@ webpackJsonp([0,1],[
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
+	                { className: 'overline flo' },
 	                _react2.default.createElement(
 	                    'h1',
 	                    { className: 'app_title' },
@@ -27295,9 +27294,9 @@ webpackJsonp([0,1],[
 	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
-	                "h1",
-	                { className: "app_title" },
-	                "附近"
+	                "div",
+	                { className: "overline flo" },
+	                this.props.children
 	            );
 	        }
 	    }]);
@@ -27407,13 +27406,235 @@ webpackJsonp([0,1],[
 /* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var Nearcomp = __webpack_require__(239);
 	module.exports = {
 	    path: 'near',
-	    component: Nearcomp
+	    component: Nearcomp,
+	    childRoutes: [{ path: 'shopping', component: __webpack_require__(244) }, { path: 'store/:id', component: __webpack_require__(245) }],
+	    indexRoute: {
+	        component: __webpack_require__(246)
+	    }
 	};
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * 附近  购物模块
+	 "shopid": "2",
+	 "shopname": "牛肉面",
+	 "shopdesc": "This is *another* comment",
+	 "shopimg":"static/images/b.jpg"
+	 *
+	 */
+	var Shopping = _react2.default.createClass({
+	    displayName: 'Shopping',
+
+
+	    getInitialState: function getInitialState() {
+	        return { data: [] };
+	    },
+	    componentDidMount: function componentDidMount() {
+	        $.ajax({
+	            url: 'http://localhost/wap_build_react/data/store_shops.json',
+	            dataType: 'json',
+	            cache: false,
+	            success: function (data) {
+	                this.setState({ data: data });
+	            }.bind(this),
+	            error: function (xhr, status, err) {
+	                console.log(err.toString());
+	            }.bind(this)
+	        });
+	    },
+
+	    render: function render() {
+	        var commentnode = this.state.data.map(function (itemnode) {
+	            var url = 'near/store/' + itemnode.shopid;
+	            return _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: url, key: itemnode.shopid, data: itemnode },
+	                _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement('img', { src: itemnode.shopimg }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'shopinfo' },
+	                        _react2.default.createElement(
+	                            'h3',
+	                            null,
+	                            itemnode.shopname
+	                        ),
+	                        _react2.default.createElement(
+	                            'p',
+	                            null,
+	                            itemnode.shopdesc
+	                        )
+	                    )
+	                )
+	            );
+	        });
+
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'overline flo' },
+	            _react2.default.createElement(
+	                'h1',
+	                { className: 'app_title' },
+	                ' 购物模块 '
+	            ),
+	            _react2.default.createElement(
+	                'ul',
+	                { className: 'list shoplist flo' },
+	                commentnode
+	            )
+	        );
+	    }
+	});
+
+	module.exports = Shopping;
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Store = _react2.default.createClass({
+	    displayName: 'Store',
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            data: []
+	        };
+	    },
+	    componentWillMount: function componentWillMount() {
+	        console.log(this.props);
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Hello World'
+	        );
+	    },
+	    componentDidMount: function componentDidMount() {},
+	    componentWillUnmount: function componentWillUnmount() {}
+
+	}); /**
+	     * Created by Administrator on 2016/8/26.
+	     */
+
+	module.exports = Store;
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Near 模块默认访问
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	var near_data = [{ id: 1, name: "购物", path: "near/shopping" }, { id: 2, name: '美食', path: 'near/foods' }, { id: 3, name: '玩乐', path: 'near/players' }, { id: 4, name: '活动', path: 'near/activity' }];
+
+	var Index = function (_Component) {
+	    _inherits(Index, _Component);
+
+	    function Index(props) {
+	        _classCallCheck(this, Index);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Index).call(this, props));
+	    }
+
+	    _createClass(Index, [{
+	        key: 'render',
+	        value: function render() {
+	            var commentNodes = near_data.map(function (list_item) {
+	                return _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: list_item.path, key: list_item.id },
+	                    _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement('b', { className: 'img_ico' }),
+	                        _react2.default.createElement(
+	                            'p',
+	                            { className: 'desc flo clearfid' },
+	                            _react2.default.createElement(
+	                                'span',
+	                                { className: 'flo' },
+	                                list_item.name
+	                            ),
+	                            _react2.default.createElement(
+	                                'span',
+	                                { className: 'flo_r ico_flo_r' },
+	                                ' > '
+	                            )
+	                        )
+	                    )
+	                );
+	            });
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'overline flo' },
+	                _react2.default.createElement(
+	                    'h1',
+	                    { className: 'app_title' },
+	                    '附近'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'default_list flo clearfid' },
+	                    _react2.default.createElement(
+	                        'ul',
+	                        { className: 'list flo clearfid' },
+	                        commentNodes
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Index;
+	}(_react.Component);
+
+	module.exports = Index;
 
 /***/ }
 ]);

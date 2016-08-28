@@ -6,11 +6,11 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 module.exports = {
     entry:[
-        './app/src/entry.js'
+        './app_flux/app.js'
     ],
     output:{
-        path: __dirname+"/build/app/",
-        publicPath:'./app/src/',
+        path: __dirname+"/build/flux/",
+        publicPath:'./app_flux/js/',
         filename:'bundle.js'
     },
     resolve: {

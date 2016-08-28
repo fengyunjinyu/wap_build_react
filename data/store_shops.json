@@ -1,0 +1,14 @@
+[
+  {
+    "shopid": "1",
+    "shopname": "一碗香",
+    "shopdesc": "传统手工饮食",
+    "shopimg" : "images/a.jpg"
+  },
+  {
+    "shopid": "2",
+    "shopname": "牛肉面",
+    "shopdesc": "This is *another* comment",
+    "shopimg":"images/a.jpg"
+  }
+]

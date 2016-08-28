@@ -7,7 +7,7 @@ class Friends extends Component{
     }
     render(){
         return(
-            <div>
+            <div className="overline flo">
                 <h1 className="app_title">朋友</h1>
                 {this.props.children}
             </div>

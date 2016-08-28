@@ -7,7 +7,10 @@ class Near extends Component {
     }
     render(){
         return (
-            <h1 className="app_title">附近</h1>
+            <div className="overline flo">
+                {this.props.children}
+            </div>
+
         );
     }
 }
