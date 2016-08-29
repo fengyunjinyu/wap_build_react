@@ -15,42 +15,36 @@ var MessageStore = require('../stores/MessageStore');
  */
 var MessageAction = require('../actions/MessageActionCreator');
 
+/**
+ * 消息列表
+ * @type {exports}
+ */
 var MessageList = require("./Messagelist.react");
+/**
+ * 消息输入框
+ * @type {exports}
+ */
+var MessageInput = require("./MessageInput.react");
+
+
 
 
 var ENTER_KEY_CODE = 13;
 var Message  = React.createClass({
-    getInitialState: function(){
+    getInitialState:function(){
         return {
             text:''
         }
     },
-
     render:function(){
         return (
-
-            <div className="mess_pos">
-                <input type="text" className="message_input" value={this.state.text} onChange={this._onChange} onKeyDown={this._onKeyDown} />
+            <div className="overline flo">
+                <MessageList />
+                <MessageInput />
             </div>
         );
     },
-    _onChange:function( event , value){
-        this.setState({
-            text:event.target.value
-        })
-    },
-    _onKeyDown: function(event ){
-        console.log('jj');
-        if(event.keyCode === ENTER_KEY_CODE){
-            console.log("mm");
-            event.preventDefault();
-            var text = this.state.text.trim();
-            if(text){
-                MessageAction.receiveMessage(text);
-            }
-
-            this.setState({ text:''})
-        }
+    _onchange:function(){
 
     }
 });

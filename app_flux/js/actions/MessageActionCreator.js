@@ -10,8 +10,8 @@ function receiveMessage( message ){
         message: message
     };
     AppDispatcher.dispatch(action);
-}
+};
 
 module.exports = {
     receiveMessage : receiveMessage
-}
+};
