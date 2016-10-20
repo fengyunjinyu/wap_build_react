@@ -14,6 +14,7 @@ var Shopping = React.createClass({
         return {data: []}
     },
     componentDidMount: function(){
+        console.log("shop list");
         $.ajax({
             url:'http://localhost/wap_build_react/data/store_shops.json',
             dataType:'json',

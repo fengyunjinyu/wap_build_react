@@ -27,7 +27,7 @@ var MessageInput  = React.createClass({
     render:function(){
         return (
             <div className="mess_pos">
-                <input type="text" className="message_input" value={this.state.text} onChange={this._onChange} onKeyDown={this._onKeyDown} />
+                <input type="text" placeholder="请输入留言内容" className="message_input" value={this.state.text} onChange={this._onChange} onKeyDown={this._onKeyDown} />
             </div>
         );
     },

@@ -1,0 +1,40 @@
+{
+   "status" : 10000,
+   "data": [
+     {
+       "goodid" : 1,
+       "price" : 16,
+       "goodname": "商品1"
+     },
+     {
+       "goodid" : 2,
+       "price" : 16,
+       "goodname": "商品2"
+     },
+     {
+       "goodid" : 3,
+       "price" : 16,
+       "goodname": "商品3"
+     },
+     {
+       "goodid" : 4,
+       "price" : 16,
+       "goodname": "商品4"
+     },
+     {
+       "goodid" : 5,
+       "price" : 16,
+       "goodname": "商品5"
+     },
+     {
+       "goodid" : 6,
+       "price" : 16,
+       "goodname": "商品6"
+     },
+     {
+       "goodid" : 7,
+       "price" : 16,
+       "goodname": "商品7"
+     }
+   ]
+}

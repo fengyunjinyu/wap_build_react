@@ -25,7 +25,7 @@ var MessageList = React.createClass({
 
         return (
             <div className="overline flo">
-                <ul className="list messagelist">
+                <ul className="list messagelist overline flo">
                     <li>
                         <div className="user_ico user_ico_left"></div>
                         <p className="user_text">
@@ -33,6 +33,8 @@ var MessageList = React.createClass({
                              Helloworld SMP  UserBass单独
                         </p>
                     </li>
+
+
                     {MessageItemd}
                 </ul>
             </div>

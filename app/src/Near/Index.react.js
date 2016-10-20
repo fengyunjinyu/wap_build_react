@@ -14,6 +14,9 @@ var near_data =[
 
 
 class Index extends Component {
+    componentDidMount(){
+        console.log("module near");
+    }
     constructor(props){
         super(props);
     }

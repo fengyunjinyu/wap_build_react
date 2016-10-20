@@ -38,7 +38,8 @@ var Message  = React.createClass({
     },
     render:function(){
         return (
-            <div className="overline flo">
+            <div className="overline flo page_message_struct">
+                <h3 className="mod_title"> 消息 </h3>
                 <MessageList />
                 <MessageInput />
             </div>

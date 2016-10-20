@@ -30,6 +30,33 @@
         .shoplist li .shopinfo p { line-height: 20px;font-size: 12px; }
 
 
+        .pad_16{padding: 16px;}
+
+        .form_area{
+        }
+
+        .form_area p{
+            line-height: 30px;
+            color: #585858;
+            font-size: 0.875em;
+        }
+        .input_normal{ display: inline-block;
+            line-height: 40px;
+            background: #fff;
+            padding-left: 15px;
+            font-size: 1em;
+            width:100%;
+            border: #d1d1d1 solid 1px;
+        }
+
+        .btn_normal{
+            line-height:40px;font-size: 1rem;
+            width:100%;display: inline-block;
+            border: none;
+        }
+
+        .pad_tb_16{padding: 16px 0}
+
     </style>
 </head>
 <body style="background: #f5f6f5">
@@ -67,6 +94,19 @@
             </div>
         </li>
     </ul>
+</div>
+
+<div class="overline flo pad_16" >
+    <div class="overline flo form_area" >
+        <p>用户名</p>
+        <input class="input_normal" type="text" name="dd" placeholder="输入用户名">
+        <p>密码</p>
+        <input class="input_normal" type="password" name="dd" placeholder="输入密码">
+
+    </div>
+    <div class="pad_tb_16 overline flo">
+        <button class="btn_normal red">登录</button>
+    </div>
 </div>
 
 

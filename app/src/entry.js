@@ -7,6 +7,7 @@ var Friends = require("./Friends.react");
 var Near = require("./Near.react");
 var Me = require("./Me.react");
 var Hello = require("./Hello");
+var Login = require("./Common/Login.react");
 
 var data = [
     {name: "消息" , classname:'ftmenu_ico ftmenu_ico_user',path:"/message"},
@@ -16,6 +17,9 @@ var data = [
 ];
 
 var App = React.createClass({
+    componentDidMount:function(){
+        console.log('mod:index');
+    },
     render:function(){
         return (
             <div>
@@ -79,7 +83,8 @@ const rootroutes = {
         require("./routes/me.route"),
         require('./routes/near.route'),
         {path : 'friends' ,component : Friends},
-        {path : 'message' , component: Message }
+        {path : 'message' , component: Message },
+        {path : 'login' , component : Login }
     ],
     indexRoute:{
         component:Hello

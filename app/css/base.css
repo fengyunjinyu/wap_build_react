@@ -68,3 +68,36 @@ body{background: #f5f6f5;}
 }
 .shoplist li .shopinfo h3{ line-height: 30px;font-size: 16px;}
 .shoplist li .shopinfo p { line-height: 20px;font-size: 12px; }
+
+
+.pad_16{padding: 16px;}
+
+.form_area{
+}
+
+.form_area p{
+    line-height: 30px;
+    color: #585858;
+    font-size: 0.875em;
+}
+.input_normal{ display: inline-block;
+    line-height: 40px;
+    background: #fff;
+    padding-left: 15px;
+    font-size: 1em;
+    width:100%;
+    border: #d1d1d1 solid 1px;
+}
+
+.btn_normal{
+    line-height:40px;font-size: 1rem;
+    width:100%;display: inline-block;
+    border: none;
+}
+
+.pad_tb_16{padding: 16px 0}
+
+.goodslist{}
+.goodslist li{}
+.goodslist li p.goodname{ line-height: 40px;font-size: 16px;color: #848484}
+.goodslist li span.price{}
