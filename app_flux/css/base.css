@@ -108,3 +108,112 @@ h1,h2,h3,h4,h5,h6,b,i{font-style: normal;font-weight: normal}
     background: #fff;
     border: #d3d3d3 solid 1px;;
 }
+
+.footmenu{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border-top: #d3d3d3 solid 1px;
+    height:50px;
+    width:100%;
+    background: #f5f6f5;
+    display: flex;
+
+}
+.footmenu li{
+    flex:1;
+    border-right: #d3d3d3 solid 1px;
+    text-align: center;
+    color: #848484;
+    font-size: 12px;
+    padding-top: 25px;
+    line-height: 20px;
+
+}
+.footmenu li:last-child{
+    border-right:none ;
+}
+
+.pad_lr_15{padding: 0 15px}
+.mod_title{
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: #d3d3d3 solid 1px;
+    background: #f5f6f5;
+    color: #848484;
+}
+
+.login_area{
+    padding: 40px 20px 10px;
+
+}
+.login_area p{
+    display: inline-block;
+    width: 100%;
+    border: #d8d8d8 solid 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.login_area p input{
+    display: inline-block;
+    line-height: 40px;
+    width: 100%;
+    padding-left: 20px;
+    color: #848484;
+    border: none;;
+    font-size: 16px;
+}
+
+.btn_normal{
+    position: relative;
+    width: 100%;
+    line-height: 40px;
+    background: #848484;
+    color: #ffffff;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.pos_pwd{
+    position: absolute;
+    line-height: 40px;
+    right: 0;
+    width: 100px;
+    top: 0;
+    height: 40px;
+    background: #f5f6f5;
+    text-align: center;
+    color: #848484;
+}
+.account_tab{
+    padding: 8px 0;
+    border-bottom: #a3a3a3 solid 1px;
+    background: #d3d3d3;
+    text-align: center;
+}
+.account_tab p{
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #f5f6f5;
+    position: relative;
+    float: left;
+    margin-left: 50%;
+    left:-80px;
+}
+.account_tab span{
+    display: inline-block;
+    width: 80px;;
+    padding: 0 10px;
+    line-height: 25px;
+    font-size: 12px;
+    color: #848484;
+}
+.account_tab span.active{
+    background: #848484;
+    color: #f5f6f5;
+}

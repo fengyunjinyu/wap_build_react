@@ -6,9 +6,11 @@ import React from 'react';
 var Account = React.createClass({
         render:function() {
             return (
-                <header id="header">
-                    <h1>todos</h1>
-                </header>
+                <div className="overline flo account_tab" >
+                    <p>
+                        <span>Hello</span><span className="active">Smater</span>
+                    </p>
+                </div>
             )
         },
         _onSave:function(text){

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,width=device-width">
+    <title>用户登录注册</title>
+    <link href="../css/base.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        .pad_lr_15{padding: 0 15px}
+        .mod_title{
+            line-height: 40px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: #d3d3d3 solid 1px;
+            background: #f5f6f5;
+            color: #848484;
+        }
+
+        .login_area{
+            padding: 40px 20px 10px;
+
+        }
+        .login_area p{
+            display: inline-block;
+            width: 100%;
+            border: #d8d8d8 solid 1px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .login_area p input{
+            display: inline-block;
+            line-height: 40px;
+            width: 100%;
+            padding-left: 20px;
+            color: #848484;
+            border: none;;
+            font-size: 16px;
+        }
+
+        .btn_normal{
+            position: relative;
+            width: 100%;
+            line-height: 40px;
+            background: #848484;
+            color: #ffffff;
+            text-align: center;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .pos_pwd{
+            position: absolute;
+            line-height: 40px;
+            right: 0;
+            width: 100px;
+            top: 0;
+            height: 40px;
+            background: #f5f6f5;
+            text-align: center;
+            color: #848484;
+        }
+
+        .account_tab{
+            padding: 5px 0;
+            border-bottom: #a3a3a3 solid 1px;
+            background: #d3d3d3;
+        }
+        .account_tab p{
+            display: inline-block;
+            border-radius: 5px;
+            overflow: hidden;
+            background: #f5f6f5;
+            position: relative;
+            float: left;
+            margin-left: 50%;
+            left:-80px;
+        }
+        .account_tab span{
+            display: inline-block;
+            width: 80px;;
+            padding: 0 10px;
+            line-height: 30px;
+            font-size: 12px;
+            color: #848484;
+        }
+        .account_tab span.active{
+            background: #848484;
+            color: #f5f6f5;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="overline flo">
+    <h3 class="mod_title">注册</h3>
+    <div class="overline flo login_area">
+        <p><input type="text" name="username" placeholder="输入用户名"></p>
+        <p>
+            <input type="text" name="pwd" placeholder="输入密码">
+            <span class="pos_pwd">获取验证码</span>
+        </p>
+    </div>
+    <div class="overline flo pad_lr_15">
+        <a class="btn_normal">登录</a>
+    </div>
+</div>
+
+
+<div class="overline flo account_tab" style="text-align: center">
+    <p>
+        <span>Hello</span><span class="active">Smater</span>
+    </p>
+</div>
+
+
+
+
+</body>
+</html>

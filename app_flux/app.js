@@ -8,16 +8,19 @@ var ReactDOM = require('react-dom');
 import { Router, Route, IndexRoute, Link, IndexLink, browserHistory , hashHistory , RouteHandler } from 'react-router';
 
 
-
-
 var App = React.createClass({
     render: function(){
         return (
-            <div>
+            <div className="">
                {this.props.children ||  "First module"}
-                <Link to="message">message</Link>
-                <Link to="account">account</Link>
+                
 
+
+                <ul className="footmenu">
+                     <li>menu1</li>
+                     <li>menu2</li>
+                     <li>menu3</li>
+                </ul>
             </div>
         )
     }
@@ -30,9 +33,9 @@ const rootroutes = {
     path:'/',
     component:App,
     childRoutes:[
-        {path : 'message' ,component:require("./js/components/Message.react")},
+        {path : 'message' , component:require("./js/components/Message.react")},
         {path : 'account' , component : require("./js/components/Account.react")},
-        //{path : 'near' , component : Near},
+        {path : 'login'   , component : require("./js/components/Login.react")},
         //{path : 'message' , component: Message }
 
     ],
