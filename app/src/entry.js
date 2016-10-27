@@ -2,12 +2,6 @@ var React = require('react');
 var ReactDom = require('react-dom');
 import { Router, Route, IndexRoute, Link, IndexLink, browserHistory , hashHistory , RouteHandler } from 'react-router';
 var Footmenu = require('./Footmenu.react');
-var Message = require("./Message.react");
-var Friends = require("./Friends.react");
-var Near = require("./Near.react");
-var Me = require("./Me.react");
-var Hello = require("./Hello");
-var Login = require("./Common/Login.react");
 
 var data = [
     {name: "消息" , classname:'ftmenu_ico ftmenu_ico_user',path:"/message"},
@@ -24,9 +18,9 @@ var App = React.createClass({
         return (
             <div>
                 <Footmenu data={data} />
-                <div className="overline flo">
-                   {this.props.children ||  "First module"}
-                </div>
+                    <div className="overline flo">
+                       {this.props.children ||  "First module"}
+                    </div>
             </div>
         );
     }
@@ -65,7 +59,8 @@ const CourseRoute = {
 
 const routes = {
     path: '/',
-    component: App,
+    component: App
+    /*,
     childRoutes: [
         {path : 'friends' ,component : Friends},
         {path : 'me' , component : Me},
@@ -75,16 +70,14 @@ const routes = {
     indexRoute:{
         component:Hello
     }
+
+    */
 };
 const rootroutes = {
     path:'/',
     component:App,
     childRoutes:[
-        require("./routes/me.route"),
-        require('./routes/near.route'),
-        {path : 'friends' ,component : Friends},
-        {path : 'message' , component: Message },
-        {path : 'login' , component : Login }
+
     ],
     indexRoute:{
         component:Hello

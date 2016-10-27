@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom'
 
 class Friends extends Component{
     constructor(props){
@@ -15,7 +14,4 @@ class Friends extends Component{
         );
     }
 }
-
-
-
 module.exports=Friends;
